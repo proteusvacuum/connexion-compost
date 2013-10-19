@@ -23,7 +23,7 @@ class CompostersController < ApplicationController
 		@composter = Composter.find(params[:id])
 		@composter.destroy
 
-		redirect_to root_path
+		redirect_to user_path(current_user)
 	end
 
 

@@ -23,7 +23,7 @@
 <div id="leftnav">
 		<div id = "user">
 		<% if current_user %>
-		Welcome <%= current_user.name %>!
+		Welcome <%= link_to current_user.name, user_url(current_user) %>!
 		<%= link_to "Sign Out", signout_path %>
 		<% else %>
 		<%#= link_to "Sign in with Twitter", "/auth/twitter" %> ||  
@@ -50,6 +50,7 @@
 
 </div>
 <div id="container">
+	
 	<%= yield %>
 </div>
 
