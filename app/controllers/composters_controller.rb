@@ -4,15 +4,20 @@ class CompostersController < ApplicationController
 		@composter = Composter.new
 	end
 	def create
+		@user = current_user
 		@composter = Composter.new(composter_params)
+		@composter.user_id = @user.id
 		@composter.save
-		redirect_to composter_url(@composter)
+		redirect_to composters_url
 	end
 	def show
+		 @composter = Composter.find(params[:id])
+		@json = Composter.all.to_gmaps4rails
+	end
+def index
 		# @composter = Composter.find(params[:id])
 		@json = Composter.all.to_gmaps4rails
 	end
-
 	  private
 
     def composter_params

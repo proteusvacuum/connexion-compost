@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019162103) do
+ActiveRecord::Schema.define(version: 20131019171951) do
 
   create_table "composters", force: true do |t|
     t.float    "latitude"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20131019162103) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "address"
+    t.integer  "user_id"
   end
+
+  add_index "composters", ["user_id"], name: "index_composters_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "provider"
