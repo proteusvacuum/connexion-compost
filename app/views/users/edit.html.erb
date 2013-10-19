@@ -1,5 +1,5 @@
 <h1>Hello <%= @user.name %>!</h1>
-We need some more information about you...
+<br>
 <!-- If you are a composter -->
 <%#= link_to "Add a composter", new_composter_url,  class:"button" %>
 <%= form_for (@user) do |f| %>
@@ -11,5 +11,5 @@ We need some more information about you...
 	<%= f.text_field :postcode %>
 
 
-	<%= f.submit "Add info", class: "btn btn-large btn-primary" %>
+	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
 <% end %>
