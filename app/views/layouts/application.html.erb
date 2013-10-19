@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ConnexionCompost</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag 'gmaps4rails' %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>ConnexionCompost</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag 'gmaps4rails' %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div id = "top">
+		<div id="logo">
+			<%= image_tag "logo.png" %></a>
+		</div>
+		<div id="title">
+	<h2 style="text-align: center">
+		Un programme qui encourage le compostage par la coop&#233;ration des voisins.
+	</h2>
+	</div>
+</div>
 
-<%= yield %>
+
+<div id="leftnav">
+		<div id = "user">
+		<% if current_user %>
+		Welcome <%= current_user.name %>!
+		<%= link_to "Sign Out", signout_path %>
+		<% else %>
+		<%#= link_to "Sign in with Twitter", "/auth/twitter" %> ||  
+		<%= link_to "Log in!", "/auth/twitter" %>
+		<% end %>
+	</div>
+	<%#= link_to "Log in!", "/auth/twitter" %>
+	<br>
+	<div class="americantypewriter">j'aimerai...</div>
+	<div class="bignoodletitling">
+		<%= link_to "accueillir le compost d'un voisin", new_composter_url %>
+		</div>
+	<div class="bignoodletitling"><a>trouver un endroit pour faire le compostage</a></div>
+
+	<br>
+	<a href="fonctionnement nf.html">comment &#231;a fonctionne</a>
+	<br>
+	<a href="compostage.html">le compostage</a>
+	<br>
+	<a href="contact">contact</a>
+	<br>
+	<br>
+	<a href="french">FR </a><a href="english">EN</a>
+
+</div>
+<div id="container">
+	<%= yield %>
+</div>
+
+
+
 <%= yield :scripts %>
-</body>
-<footer>
 
-</footer>
+</body>
 </html>
