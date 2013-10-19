@@ -1,4 +1,10 @@
 ConnexionCompost::Application.routes.draw do
+  root 'welcome#index'
+  get "auth/:provider/callback" => "sessions#create"
+  post "auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :signout
+  resources :users
+  resources :composters
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

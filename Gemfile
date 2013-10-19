@@ -43,3 +43,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "omniauth"
+gem "omniauth-twitter"
+gem "geocoder"
+gem 'gmaps4rails'

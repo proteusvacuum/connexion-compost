@@ -1,0 +1,12 @@
+
+<!-- If you are a composter -->
+
+<h1>Add a new composter</h1>
+<%= form_for (@composter) do |f| %>
+	<%= f.label :address %>
+	<%= f.text_field :address %>
+
+	<%= f.submit "Add composter", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<p>MAP GOES HERE </p>
