@@ -1,4 +1,5 @@
 class Composter < ActiveRecord::Base
+	attr_accessor :title
 	belongs_to :user
 	
 	geocoded_by :address
@@ -7,4 +8,7 @@ class Composter < ActiveRecord::Base
 
 	acts_as_gmappable :process_geocoding => false, :address => "address"
 	
+
+
+
 end
