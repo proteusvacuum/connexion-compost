@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019171951) do
+ActiveRecord::Schema.define(version: 20131019194052) do
 
   create_table "composters", force: true do |t|
     t.float    "latitude"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20131019171951) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "postcode"
   end
 
 end

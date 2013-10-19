@@ -10,11 +10,11 @@ class CompostersController < ApplicationController
 		@composter.save
 		redirect_to composters_url
 	end
-	def show
+	def show	
 		@composter = Composter.find(params[:id])
 		@json = Composter.all.to_gmaps4rails
 	end
-	def index
+	def index		
 		@composters = Composter.all
 		@json = Composter.all.to_gmaps4rails
 	end
